@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2021_11_14_122025) do
 
+   enable_extension "plpgsql"
+
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
