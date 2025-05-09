@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -5,7 +7,7 @@ ruby '3.3.1'
 
 gem 'rails', '~> 7.1'
 gem 'pg'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 5.6.9'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'duktape'
@@ -20,8 +22,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'bundler-audit', require: false
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'brakeman', require: false
   gem 'rubocop', require: false
 end
