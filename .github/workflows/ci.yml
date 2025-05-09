@@ -20,6 +20,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -40,14 +41,14 @@ jobs:
           gem install bundler
           bundle install
           yarn install --frozen-lockfile
-      
+
       - name: Set up database
         run: |
           cp config/database.yml.ci config/database.yml
           bin/rails db:create db:schema:load
 
       - name: Run tests
-      env:
-        RAILS_ENV: test
-        DATABASE_URL: postgres://postgres:password@localhost:5432/postgres
-      run: bin/rails test
+        env:
+          RAILS_ENV: test
+          DATABASE_URL: postgres://postgres:password@localhost:5432/postgres
+        run: bin/rails test
