@@ -33,6 +33,12 @@ Metrics/BlockLength:
     - 'config/**/*.rb'
     - 'spec/**/*.rb'
 
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+
 Rails:
   Enabled: true
 
